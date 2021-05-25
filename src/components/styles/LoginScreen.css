@@ -53,8 +53,39 @@
     margin-bottom: 20px;
 }
 
+.loginScreen__body > h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
 
+.loginScreen__body > h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
 
+.loginScreen__input > form > input {
+    padding: 10px;
+    outline: none;
+    height: 30px;
+    width: 30%;
+    border: none;
+    max-width: 600px;
+}
+
+.loginScreen__getStarted {
+    padding: 16px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.loginScreen__input {
+    margin: 20px;
+}
 
 
 
