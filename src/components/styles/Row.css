@@ -1,6 +1,7 @@
 .row{
     color: #fff;
     margin-left:20px;
+    cursor:pointer;
 }
 
 .row__posters {
@@ -15,7 +16,7 @@
     object-fit: contain;
     margin-right: 10px;
     width: 100%;
-    transition: transform 350ms;
+    transition: transform 250ms;
 }
 
 .row__posters::-webkit-scrollbar {
@@ -29,7 +30,7 @@
 
 .row__posterLarge {
     max-height: 250px;
-    transition: transform 350ms;
+    transition: transform 250ms;
 }
 .row__posterLarge:hover {
     max-height: 250px;
