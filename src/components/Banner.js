@@ -2,6 +2,10 @@ import React from 'react';
 import "./styles/Banner.css";
 
 const Banner = () => {
+
+    const truncate = (string, n) => {
+        return string?.length > n  ? string.substring(0, n -1) + "...." : string;
+    }
     return (
         <header style={{
             backgroundSize: 'cover',
@@ -21,7 +25,7 @@ const Banner = () => {
                 </div>
 
                 <h1 className="banner__description">
-                    This is a test description
+                    {truncate('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dignissimos eaque labore laudantium minima quia quis rerum sequi sint tempoantium dignissimos eaque labore laudantium minima quia quis rerum sequi sint temporeantium dignissimos eaque labore laudantium minima quia quis rerum sequi sint temporeantium dignissimos eaque labore laudantium minima quia quis rerum sequi sint temporere.', 150)}
                 </h1>
             </div>
 
