@@ -34,3 +34,51 @@
     background: rgba(0, 0, 0, 0.4);
     background: linear-gradient(rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
 }
+
+.loginScreen__body {
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    z-index: 1;
+    color: #fff;
+    padding: 20px;
+}
+
+.loginScreen__body > h1 {
+    font-size: 3.125rem;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
