@@ -11,7 +11,7 @@ const Banner = () => {
 
 
             <div className="banner__contents">
-                <h1 className="bannerTitle">
+                <h1 className="banner__title">
                     Movie Name
                 </h1>
 
