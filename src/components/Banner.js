@@ -24,7 +24,7 @@ const Banner = () => {
 
     }, []);
 
-    console.log(movie)
+    // console.log(movie)
 
     const truncate = (string, n) => {
         return string?.length > n  ? string.substring(0, n -1) + "...." : string;
@@ -39,7 +39,7 @@ const Banner = () => {
 
             <div className="banner__contents">
                 <h1 className="banner__title">
-                    Movie Name
+                    {movie?.title || movie?.name || movie?.original_name || "Cool Movie"}
                 </h1>
 
                 <div className="banner__buttons">
@@ -48,7 +48,7 @@ const Banner = () => {
                 </div>
 
                 <h1 className="banner__description">
-                    {truncate('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dignissimos eaque labore laudantium minima quia quis rerum sequi sint tempoantium dignissimos eaque labore laudantium minima quia quis rerum sequi sint temporeantium dignissimos eaque labore laudantium minima quia quis rerum sequi sint temporeantium dignissimos eaque labore laudantium minima quia quis rerum sequi sint temporere.', 150)}
+                    {truncate(movie?.overview, 150)}
                 </h1>
             </div>
 
