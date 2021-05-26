@@ -1,14 +1,3 @@
-/*.signupScreen {*/
-/*    max-width: 300px;*/
-/*    padding: 70px;*/
-/*    margin-left: auto;*/
-/*    margin-right: auto;*/
-/*    background: rgba(0, 0, 0, 0.88);*/
-/*    position: relative;*/
-/*    height: 100%;*/
-/*}*/
-
-
 .signupScreen__body {
     max-width: 300px;
     padding: 70px;
@@ -17,8 +6,10 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin-left: 40%;
+    margin-left: 37%;
     margin-right: 35%;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
     z-index: 1;
     background: rgba(0, 0, 0, 0.88);
 }
@@ -27,6 +18,12 @@
     display: grid;
     color: #fff;
     flex-direction: column;
+}
+
+.signupScreen__body > form > input {
+    width: 300px;
+    height: 40px;
+    margin-bottom: 14px;
 }
 
 
