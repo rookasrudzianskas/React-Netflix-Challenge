@@ -10,8 +10,19 @@ function App() {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        auth.onAuthStateChanged()
-    }, [])
+        const unsubscribe = auth.onAuthStateChanged(userAuth => {
+            if(userAuth) {
+                // logged in
+                console.log("LOGGED IN")
+            } else {
+                // logged out
+            }
+        });
+
+        return unsubscribe;
+
+    }, []);
+
   return (
     <div className="app">
         <Router>
