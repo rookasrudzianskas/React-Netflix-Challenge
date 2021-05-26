@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import "./styles/LoginScreen.css";
+import SignUpScreen from "../screens/SignUpScreen";
 
 const LoginScreen = () => {
 
@@ -13,6 +14,10 @@ const LoginScreen = () => {
 
                 <div className="loginScreen__gradient" />
             </div>
+
+            {signIn ? (
+                <SignUpScreen />
+            ) : (
 
             <div className="loginScreen__body">
                 <>
@@ -30,6 +35,7 @@ const LoginScreen = () => {
                     </div>
                 </>
             </div>
+            )}
         </div>
     );
 };

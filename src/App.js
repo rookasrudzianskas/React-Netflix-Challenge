@@ -15,10 +15,6 @@ function App() {
                 ) : (
                 <Switch>
 
-                    <Route path="/test">
-
-                    </Route>
-
                     <Route path="/">
                         <HomeScreen />
                     </Route>
