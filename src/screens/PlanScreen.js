@@ -39,7 +39,22 @@ const PlanScreen = () => {
 
     return (
         <div className="plansScreen">
+            {/* list all the objects, will gitve array, with keys and values*/}
+            {Object.entries(products).map(([productId, productData]) => {
+                // add some logic to check if the users subscription is active
+                return (
+                    <div className="plansScreen__plan">
+                        <div className="planScreen__info">
+                            <h5>{productData.name}</h5>
+                            <h6>{productData.description}</h6>
+                        </div>
 
+                        <button>
+                            Subscribe
+                        </button>
+                    </div>
+                )
+            })}
         </div>
     );
 };
