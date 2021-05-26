@@ -4,15 +4,35 @@ import db from "../firebase";
 import {useSelector} from "react-redux";
 import {selectUser} from "../features/userReducer";
 import { loadStripe } from "@stripe/stripe-js";
+import userEvent from "@testing-library/user-event";
 
 const PlanScreen = () => {
 
     const [products, setProducts] = useState([]);
     const user = useSelector(selectUser);
+    const [subscription, setSubscription] = useState(null);
+
+    useEffect(() => {
+        db.collection('customers')
+            .doc(user.uid)
+            .collection('subscriptions')
+            .get()
+            .then(querySnapshot => {
+            querySnapshot.forEach(async subscription => {
+                setSubscription({
+                    role: subscription.data().role,
+                    current_period_end: subscription.data().current_period_end.seconds,
+                    current_period_start: subscription.data().current_period_start.seconds,
+                });
+            });
+        });
+    }, [user.uid]);
+
+    console.log("HAHAHAHA", subscription);
 
     useEffect(() => {
         // run once component loads
-        console.log("ENTERERD")
+        // console.log("ENTERERD")
 
         // this forms the object, we can use anywhere else in the app
         db.collection("products")
