@@ -95,6 +95,8 @@ const PlanScreen = () => {
 
     return (
         <div className="plansScreen">
+            <br/>
+            {subscription &&<p className="plansScreen__p">Renewal date: {new Date(subscription?.current_period_end * 1000).toLocaleDateString()} </p>}
              {/*list all the objects, will gitve array, with keys and values*/}
             {Object.entries(products).map(([productId, productData]) => {
                 // add some logic to check if the users subscription is active
@@ -106,7 +108,7 @@ const PlanScreen = () => {
                 console.log(subscription?.role.toLowerCase());
 
                 return (
-                    <div className="plansScreen__plan">
+                    <div key={productId} className={`${isCurrentPackage  && 'planScreen__plan--disabled'} plansScreen__plan `}>
                         <div className="planScreen__info">
                             <h5>{productData.name}</h5>
                             <h6>{productData.description}</h6>

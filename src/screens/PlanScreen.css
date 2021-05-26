@@ -26,3 +26,11 @@
     box-shadow: 1px 1px 15px -2px #000000;
     background-color: #A0060E;
 }
+
+.planScreen__plan--disabled > button {
+    background-color: gray !important;
+}
+
+.plansScreen__p {
+    cursor: default;
+}
