@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import "./PlanScreen.css";
 import db from "../firebase";
+import {useSelector} from "react-redux";
+import {selectUser} from "../features/userReducer";
 
 const PlanScreen = () => {
 
     const [products, setProducts] = useState([]);
+    const user = useSelector(selectUser);
 
     useEffect(() => {
         // run once component loads
@@ -38,7 +41,16 @@ const PlanScreen = () => {
     console.log(products);
 
     const loadCheckout = async (priceId) => {
+        const docRef = await db.collection('customers').doc(user.uid).collection('checkout_sessions').add({
+            price: priceId,
+            // if something happens, if success happens, or cancel, there are urls, where to get back, and the pages, are the current pages
+            success_url: window.location.origin,
+            cancel_url: window.location.origin,
+        });
+        // takes a snapshot of the database, then it changes
+        docRef.onSnapshot(async () => {
 
+        })
     };
 
     return (
