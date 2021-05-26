@@ -3,6 +3,7 @@ import "./PlanScreen.css";
 import db from "../firebase";
 import {useSelector} from "react-redux";
 import {selectUser} from "../features/userReducer";
+import { loadStripe } from "@stripe/stripe-js";
 
 const PlanScreen = () => {
 
@@ -48,9 +49,27 @@ const PlanScreen = () => {
             cancel_url: window.location.origin,
         });
         // takes a snapshot of the database, then it changes
-        docRef.onSnapshot(async () => {
+        docRef.onSnapshot(async (snap) => {
+            // we get an error and session id from the snapshot, and more others, but in here desctructure just these things back
+            const { error, sessionId } = snap.data();
 
-        })
+            if(error) {
+                // show an error tu customer and
+                // inspect your Cloud Function logs in the firebase console!
+                alert(`An error occurred: ${error.message}`);
+            }
+
+            // if everything is okay, moving forward
+            if(sessionId) {
+                // we have a session, lets redirect user to checkout
+                // init stripe
+                // publishable key in here
+                // or test key or live key
+                const stripe = await loadStripe('pk_test_51IvKvMGWvMfC58SnUOzdvr8MQvjU2MXVB4f5yj6OObGM0AGXuQ9PbhKXq9T0AZ7pykYqdI2XoWEg6ia1yki0a5BP00Oy3n0tfx');
+                // redirects to the checkout screen
+                await stripe.redirectToCheckout({sessionId});
+            }
+        });
     };
 
     return (
