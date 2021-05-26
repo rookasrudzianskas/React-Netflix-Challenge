@@ -24,9 +24,9 @@ const Nav = () => {
     return (
         <div className={`nav ${show && 'nav__black'}`}>
             <div className="nav__contents">
-                <img className="nav__logo" src="https://logos-world.net/wp-content/uploads/2020/04/Netflix-Logo.png" alt=""/>
+                <img onClick={() => history.push("/")} className="nav__logo" src="https://logos-world.net/wp-content/uploads/2020/04/Netflix-Logo.png" alt=""/>
 
-                <img onClick={() => history.push("./profile")} className="nav__avatar" src="https://i.pinimg.com/originals/e3/94/30/e39430434d2b8207188f880ac66c6411.png" alt=""/>
+                <img onClick={() => history.push("/profile")} className="nav__avatar" src="https://i.pinimg.com/originals/e3/94/30/e39430434d2b8207188f880ac66c6411.png" alt=""/>
             </div>
         </div>
     );
