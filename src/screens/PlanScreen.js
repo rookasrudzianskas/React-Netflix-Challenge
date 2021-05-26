@@ -4,7 +4,7 @@ import db from "../firebase";
 
 const PlanScreen = () => {
 
-    const [products, setProducts] = useState();
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
         // run once component loads
@@ -37,9 +37,13 @@ const PlanScreen = () => {
 
     console.log(products);
 
+    const loadCheckout = async (priceId) => {
+
+    };
+
     return (
         <div className="plansScreen">
-            {/* list all the objects, will gitve array, with keys and values*/}
+             {/*list all the objects, will gitve array, with keys and values*/}
             {Object.entries(products).map(([productId, productData]) => {
                 // add some logic to check if the users subscription is active
                 return (
@@ -49,11 +53,11 @@ const PlanScreen = () => {
                             <h6>{productData.description}</h6>
                         </div>
 
-                        <button>
+                        <button onClick={() => loadCheckout(productData.prices.priceId)}>
                             Subscribe
                         </button>
                     </div>
-                )
+                );
             })}
         </div>
     );
